@@ -13,7 +13,7 @@ rvm_custom_status() {
 }
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then 
-  RPROMPT='$(rvm_custom_status)%{$reset_color%}%{$return_code%}'
+  RPROMPT='$(rvm_custom_status)%{$reset_color%} $(battery_charge)'
 fi
 
 battery_charge(){
@@ -25,12 +25,4 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} %B⚡%b %{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%} ✔ %{$reset_color%}"
 
-#Customized git status, oh-my-zsh currently does not allow render dirty status before branch
-git_custom_status() {
-  local cb=$(current_branch)
-  if [ -n "$cb" ]; then
-    echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX$(current_branch)$ZSH_THEME_GIT_PROMPT_SUFFIX"
-  fi
-}
-
-PROMPT=' $(battery_charge) %{$fg[cyan]%}%2c% %{$reset_color%}$(git_prompt_info)%{$reset_color%} :: '
+PROMPT='%{$fg[blue]%}» %{$fg[cyan]%}%2c% %{$reset_color%}$(git_prompt_info)%{$reset_color%}: '
