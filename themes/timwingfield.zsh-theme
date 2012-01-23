@@ -17,7 +17,7 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then
 fi
 
 battery_charge(){
-  echo $(~/.rvm/rubies/ruby-1.9.2-p180/bin/ruby ~/bin/battery.rb)
+  echo $(~/.rvm/rubies/ruby-1.9.2-p290/bin/ruby ~/bin/battery.rb)
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[green]%} ["
