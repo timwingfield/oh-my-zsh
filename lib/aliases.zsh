@@ -36,3 +36,5 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias go='git co'
 alias t='todo.sh -d ~/todo.cfg'
+
+alias be='bundle exec'
